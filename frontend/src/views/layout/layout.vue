@@ -47,7 +47,7 @@
                             </router-link>
                         </div>
                         <div>
-                            <router-link class="menu-item" :to="'/user/' + id + '/home'" active-class="active">
+                            <router-link class="menu-item" :to="'/user/' + id + '/home/noteslist'" active-class="active">
                                 <el-icon><Avatar /></el-icon>
                                 <span>我的</span>
                             </router-link>
