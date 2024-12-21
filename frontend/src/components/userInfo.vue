@@ -1,16 +1,21 @@
 <script setup>
     import { onMounted, ref } from 'vue'
     import { defineProps} from 'vue'
-    import { getUserDeatil } from "@/apis/user.js" 
+    import { getUserDeatil, getMyInfo } from "@/apis/user.js" 
     
     const props = defineProps({
-        userId:Object
+        userId: {
+            type: Object,
+            default: {}
+        }
     })
     // 获取个人信息
     const userInfo = ref({})
     onMounted(()=>{
         setTimeout(async() => {
-            userInfo.value  = (await getUserDeatil(props.userId)).data; 
+            userInfo.value  = props.userId ?
+             (await getUserDeatil(props.userId)).data : 
+             (await getMyInfo()).data; 
         }, 200);
         console.log("目录测试："+JSON.stringify(userInfo.value)); 
     })

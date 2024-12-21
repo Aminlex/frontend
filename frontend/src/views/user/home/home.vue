@@ -3,14 +3,12 @@
     import userInfoVue from "@/components/userInfo.vue"
     import notesListVue from '../Components/noteslist.vue';
 
-    const route = useRoute();
-    const id = route.params.id;
 </script>
     
 
 <template>
     <el-scrollbar height="600px">
-        <userInfoVue :userId="id"/>
+        <userInfoVue />
         <notesListVue />
     </el-scrollbar>
 </template>
