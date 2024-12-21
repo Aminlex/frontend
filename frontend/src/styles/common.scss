@@ -1,0 +1,46 @@
+html {
+    background-color: #20233e;
+  }
+body, html, p, div{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+a{
+    color: initial; /* 覆盖激活时的颜色 */
+    text-decoration: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+input{
+    outline: none;
+    border: none;
+    color:#DCDCDC;
+}
+button{
+    width: 50px;
+    height: 25px;
+    border: none;
+    background-color: #FAAFC3;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+$theme-color:#20233e;
+$theme-active:#FAAFC3;
+$low-theme-color:#2c3053;
+$theme-text:#FFFFFF;
+$title-color:#b7bdfa;
+$light-tilte-color:#96A7EB;
+$border-color:#B4B8EF;
+
+$text-color:#B4B4B4;  //文字
+$menubar-bgcolor:#F5F5F5;
+$active-color:#CDCDCD;
+$block-color:#EEF0F4;  //块应用
+$block-border-color:#DDDFE4; //块应用行提示
+$note-block-color:#DDDFE4;  //笔记行提示
