@@ -33,7 +33,7 @@
                 <el-menu
                     :default-active="activeIndex"
                     @select="handleSelect">
-                    <router-link :to="'/user/'+id+'/home'">
+                    <router-link :to="'/user/'+id+'/home/noteslist'">
                         <el-menu-item index="1">
                             <el-icon><HomeFilled /></el-icon>
                             <template #title>首页</template>
