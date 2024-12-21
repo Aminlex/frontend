@@ -72,7 +72,7 @@
                             <p>笔记专栏</p>
                             <p>(25)</p>
                         </div>
-                        <router-link to="/user/">
+                        <router-link :to="`/user/${id}/home/columns`">
                             <el-icon><MoreFilled /></el-icon>
                         </router-link>
                     </div>
