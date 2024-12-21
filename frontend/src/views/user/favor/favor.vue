@@ -2,12 +2,12 @@
     import noteslistVue from "@/views/index/Components/noteslist.vue"
     import { Search } from '@element-plus/icons-vue'
     import { onMounted, ref } from 'vue'
-    import { getNotesList } from '@/apis/note'
+    import { getMyFavors } from '@/apis/user'
 
     const notesList = ref({})
     const total = ref()
     onMounted(async ()=>{
-        const res = await getNotesList();
+        const res = await getMyFavors();
         notesList.value = res.records;
         total.value = res.total;
     })

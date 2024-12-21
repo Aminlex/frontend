@@ -13,8 +13,7 @@
     // 根据用户id查询专栏信息
     const columnslist = ref(null)
     const getColumnsInfo = async()=>{
-        const token = localStorage.getItem('token')
-        columnslist.value = (await getMyColumns(token)).data.records;
+        columnslist.value = (await getMyColumns()).data.records;
         // const res = await getColumnsById(props.userId,token);
         // columnslist.value = res.data;
         // console.log("columnslist:"+JSON.stringify(columnslist.value));

@@ -1,19 +1,26 @@
 <script setup>
     import { Search } from '@element-plus/icons-vue'
     import { onMounted, ref } from 'vue'
+    import { getMyConcerns } from '@/apis/user'
 
-    const concernslist = ref([{
-        "user_id": 2,
-        "avatar": null,
-        "nickname": "xiaowang",
-        "signature": "小王同学真的很爱学习"
-      },
-      {
-        "user_id": 3,
-        "avatar": null,
-        "nickname": "lisi",
-        "signature": "李四同学正在修炼中..."
-      }])
+    const concernslist = ref({})
+    onMounted(async ()=>{
+        const res = await getMyConcerns();
+        concernslist.value = res.records;
+    })
+
+    // const concernslist = ref([{
+    //     "user_id": 2,
+    //     "avatar": null,
+    //     "nickname": "xiaowang",
+    //     "signature": "小王同学真的很爱学习"
+    //   },
+    //   {
+    //     "user_id": 3,
+    //     "avatar": null,
+    //     "nickname": "lisi",
+    //     "signature": "李四同学正在修炼中..."
+    //   }])
 </script>
 
 <template>
