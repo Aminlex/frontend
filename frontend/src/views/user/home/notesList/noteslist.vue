@@ -7,8 +7,6 @@
 
     const notesList = ref({})
     const total = ref()
-    const route = useRoute()
-    const id = route.params.id
 
     onMounted(async ()=>{
         const res = await getMyNotes();

@@ -79,6 +79,7 @@
                         <div class="column-item"
                             v-for="column in columnslist"
                             :key="column.column_id"
+                            @click="router.push(`/my/column/${column.column_id}`)"
                         >
                             {{column.name}}
                         </div>

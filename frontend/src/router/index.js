@@ -30,8 +30,15 @@ const router = createRouter({
         component: () => import('@/views/user/user.vue'),
         meta: { requiresAuth: true },
         children:[{
-          path: '/my/home',
-          component: () => import('@/views/user/home/home.vue')
+          path: '/my/',
+          component: () => import('@/views/user/home/home.vue'),
+          children:[{
+            path: '/my/home',
+            component: () => import('@/views/user/home/home.vue')
+          },{
+            path: '/my/column/:id',
+            component: () => import('@/views/user/home/home.vue')
+          }]
         },{
           path: '/my/concern',
           component: () => import('@/views/user/concern/concern.vue')

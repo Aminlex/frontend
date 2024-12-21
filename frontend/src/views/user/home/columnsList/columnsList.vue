@@ -1,15 +1,26 @@
 <script setup>
     import notesListVue from "@/views/user/home/notesList/noteslist.vue"
-    import { getColumnsNotes } from "@/apis/note"
+    import { getByColumnId } from "@/apis/column"
+    import { useRoute} from 'vue-router'
 
     const notesList = ref([])
-    const columnsList = ref([])
+    const column = ref([])
+
+    const route = useRoute()
+    const id = route.params.id;
+
+    onMounted(async ()=>{
+        const res = await getByColumnId(id);
+        column.value = res.data;
+        notesList.value = res.data.notes;
+        // total.value = res.total;
+    })
     
 </script>
 
 <template>
     <div class="top-container">
-        <div class="title">专栏分类-高等数学(11)</div>
+        <div class="title">{{ column.column_name }}</div>
         <!-- 专栏文章 -->
         <div class="notes-container">
             <notesListVue :notesList="notesList"/>
