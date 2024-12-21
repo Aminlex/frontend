@@ -30,7 +30,7 @@ const router = createRouter({
         component: () => import('@/views/user/user.vue'),
         meta: { requiresAuth: true },
         children:[{
-          path: '/my/',
+          path: '/my/home',
           component: () => import('@/views/user/home/home.vue')
         },{
           path: '/my/concern',
