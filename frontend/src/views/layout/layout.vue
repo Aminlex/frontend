@@ -65,7 +65,7 @@
                     </div>
                     <template #dropdown>
                         <el-dropdown-menu>
-                            <router-link to="/my">
+                            <router-link to="/my/update">
                                 <el-dropdown-item>个人资料</el-dropdown-item>
                             </router-link>
                             <el-dropdown-item @click="exit()">退出登录</el-dropdown-item>

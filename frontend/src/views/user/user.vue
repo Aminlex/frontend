@@ -33,25 +33,25 @@
                 <el-menu
                     :default-active="activeIndex"
                     @select="handleSelect">
-                    <router-link :to="'/user/'+id+'/home/noteslist'">
+                    <router-link :to="'/my/home'">
                         <el-menu-item index="1">
                             <el-icon><HomeFilled /></el-icon>
                             <template #title>首页</template>
                         </el-menu-item>
                     </router-link>
-                    <router-link :to="'/user/'+id+'/concerns'">
+                    <router-link :to="'/my/concern'">
                         <el-menu-item index="2">
                             <el-icon><Promotion /></el-icon>
                             <template #title>关注</template>
                         </el-menu-item>
                     </router-link>
-                    <router-link :to="'/user/'+id+'/favors'">
+                    <router-link :to="'/my/collect'">
                         <el-menu-item index="3" >
                             <el-icon><StarFilled /></el-icon>
                             <template #title>收藏</template>
                         </el-menu-item>
                     </router-link>
-                    <router-link :to="'/user/'+id+'/update'">
+                    <router-link :to="'/my/update'">
                         <el-menu-item index="4">
                             <el-icon><Setting /></el-icon>
                             <template #title>个人中心</template>
@@ -72,14 +72,15 @@
                             <p>笔记专栏</p>
                             <p>(25)</p>
                         </div>
-                        <router-link :to="`/user/${id}/home/columns`">
+                        <!-- <router-link :to="`/user/${id}/home/columns`"> -->
                             <el-icon><MoreFilled /></el-icon>
-                        </router-link>
+                        <!-- </router-link> -->
                     </div>
                     <div class="bottom-item">
                         <div class="column-item"
-                        v-for="column in columnslist"
-                        :key="column.column_id">
+                            v-for="column in columnslist"
+                            :key="column.column_id"
+                        >
                             {{column.name}}
                         </div>
                     </div>

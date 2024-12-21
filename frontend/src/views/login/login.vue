@@ -27,7 +27,7 @@
                 localStorage.setItem('token',res.data.token)
                 const token = ref(localStorage.getItem('token'))
                 ElMessage({ type: 'success', message: "登录成功" })
-                const info = (await getMyInfo(token.value)).data;
+                const info = (await getMyInfo()).data;
                 // 设置昵称
                 if (info.nickname){
                     localStorage.setItem('nickname',info.nickname)

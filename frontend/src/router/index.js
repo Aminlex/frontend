@@ -25,35 +25,24 @@ const router = createRouter({
         component: () => import('@/views/create/create.vue'),
         meta: { requiresAuth: true }
       },{
-        path: '/user/:id',
-        name: 'user',
+        path: '/my',
+        name: 'my',
         component: () => import('@/views/user/user.vue'),
         meta: { requiresAuth: true },
         children:[{
-          path: '/user/:id/home',
-          component: () => import('@/views/user/home/home.vue'),
-          children:[{
-            path: '/user/:id/home/noteslist',
-            component: () => import('@/views/user/home/notesList/noteslist.vue'),
-          },{
-            path: '/user/:id/home/columns',
-            component: () => import('@/views/user/home/columnsList/columnsList.vue'),
-          }]
+          path: '/my/home',
+          component: () => import('@/views/user/home/home.vue')
         },{
-          path: '/user/:id/concerns',
-          component: () => import('@/views/user/concern/concern.vue'),
+          path: '/my/concern',
+          component: () => import('@/views/user/concern/concern.vue')
         },{
-          path: '/user/:id/favors',
-          component: () => import('@/views/user/favor/favor.vue'),
+          path: '/my/collect',
+          component: () => import('@/views/user/favor/favor.vue')
         },{
-          path: '/user/:id/update',
-          component: () => import('@/views/user/update/update.vue'),
+          path: '/my/update',
+          component: () => import('@/views/my/my.vue'),
+          meta: { requiresAuth: true }
         }]
-      },{
-        path: '/my',
-        name: 'my',
-        component: () => import('@/views/my/my.vue'),
-        meta: { requiresAuth: true }
       }]
     },{
       path: '/note/:id',

@@ -11,7 +11,7 @@
     const id = route.params.id
 
     onMounted(async ()=>{
-        const res = await getMyNotes(id);
+        const res = await getMyNotes();
         notesList.value = res.data;
         // total.value = res.total;
     })
