@@ -13,9 +13,20 @@
     const userInfo = ref({})
     onMounted(()=>{
         setTimeout(async() => {
-            userInfo.value  = props.userId ?
-             (await getUserDeatil(props.userId)).data : 
-             (await getMyInfo()).data; 
+            if (props.userId !== {}) {
+                userInfo.value  = (await getUserDeatil(props.userId)).data; 
+            } else {
+                userInfo.value = {
+                    nickname: localStorage.getItem('nickname'),
+                    avatar: localStorage.getItem('avatar'),
+                    background: localStorage.getItem('background'),
+                    signature: localStorage.getItem('signature'),
+                    fans_num: localStorage.getItem('fans_num'),
+                    follow_num: localStorage.getItem('follow_num'),
+                    note_num: localStorage.getItem('note_num')
+                }
+            }
+            
         }, 200);
         console.log("目录测试："+JSON.stringify(userInfo.value)); 
     })
