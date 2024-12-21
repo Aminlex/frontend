@@ -4,16 +4,13 @@
     import { getUserDeatil, getMyInfo } from "@/apis/user.js" 
     
     const props = defineProps({
-        userId: {
-            type: Object,
-            default: {}
-        }
+        userId: Object
     })
     // 获取个人信息
     const userInfo = ref({})
     onMounted(()=>{
         setTimeout(async() => {
-            if (props.userId !== {}) {
+            if (props.userId !== -1) {
                 userInfo.value  = (await getUserDeatil(props.userId)).data; 
             } else {
                 userInfo.value = {

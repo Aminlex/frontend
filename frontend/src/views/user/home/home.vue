@@ -8,7 +8,7 @@
 
 <template>
     <el-scrollbar height="600px">
-        <userInfoVue />
+        <userInfoVue userId="-1"/>
         <notesListVue />
     </el-scrollbar>
 </template>
