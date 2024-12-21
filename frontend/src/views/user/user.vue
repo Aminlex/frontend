@@ -64,16 +64,16 @@
             <el-aside width="250px">
                 <calendarVue/>
                 <!-- 我的专栏 -->
-                <div v-if="activeIndex == '1'" 
+                <!-- <div v-if="activeIndex == '1'" 
                     class="aside-box">
                     <div class="aside-item">
                         <div class="title">
                             <p>笔记专栏</p>
                             <p>(25)</p>
                         </div>
-                        <!-- <router-link :to="`/user/${id}/home/columns`"> -->
+                        <router-link :to="`/user/${id}/home/columns`">
                             <el-icon><MoreFilled /></el-icon>
-                        <!-- </router-link> -->
+                        </router-link>
                     </div>
                     <div class="bottom-item">
                         <div class="column-item"
@@ -84,9 +84,9 @@
                             {{column.name}}
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- 用户分组 -->
-                <div v-else-if="activeIndex == '2'" class="aside-box">
+                <!-- <div v-else-if="activeIndex == '2'" class="aside-box">
                     <div class="aside-item">
                         <div class="title">
                             <p>用户分组</p>
@@ -101,7 +101,7 @@
                             {{column.name}}
                         </div>
                     </div>
-                </div>
+                </div> -->
             </el-aside>
         </el-container>
     </div>
