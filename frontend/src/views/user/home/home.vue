@@ -1,13 +1,15 @@
 <script setup>
     import { useRoute } from 'vue-router'
     import userInfoVue from "@/components/userInfo.vue"
+    import notesListVue from '../Components/noteslist.vue';
+
 </script>
     
 
 <template>
     <el-scrollbar height="600px">
         <userInfoVue />
-        <router-view></router-view>
+        <notesListVue />
     </el-scrollbar>
 </template>
 

@@ -31,14 +31,7 @@ const router = createRouter({
         meta: { requiresAuth: true },
         children:[{
           path: '/my/',
-          component: () => import('@/views/user/home/home.vue'),
-          children:[{
-            path: '/my/home',
-            component: () => import('@/views/user/home/notesList/noteslist.vue')
-          },{
-            path: '/my/column/:id',
-            component: () => import('@/views/user/home/columnsList/columnsList.vue')
-          }]
+          component: () => import('@/views/user/home/home.vue')
         },{
           path: '/my/concern',
           component: () => import('@/views/user/concern/concern.vue')
